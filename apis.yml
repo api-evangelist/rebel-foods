@@ -1,17 +1,30 @@
 aid: rebel-foods
 name: Rebel Foods
-description: 'Rebel Foods is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Rebel Foods is an Indian cloud-kitchen operator, headquartered in Mumbai, that describes
+  itself as the world''s largest chain of internet restaurants. It runs a portfolio of delivery-first
+  food brands — Faasos, Behrouz Biryani, Oven Story, Firangi Bake, The Good Bowl, Sweet Truth, Mandarin
+  Oak, The Biryani Life and Lunch Box — out of a shared network of cloud kitchens, and consolidates them
+  for consumers in the EatSure ordering app. Its internal technology platform, the Rebel Operating System,
+  handles kitchen workflow, inventory, demand forecasting, order routing and logistics, and is offered
+  to third-party restaurant chains through the Rebel Launcher partner programme. That platform is a commercial
+  partnership, not a self-serve developer product: as of this profile Rebel Foods publishes no developer
+  portal, no public API documentation, and no machine-readable API contract.'
 url: https://raw.githubusercontent.com/api-evangelist/rebel-foods/refs/heads/main/apis.yml
+image: https://www.rebelfoods.com/images/rebelicons/favicon.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Food and Beverage
+- Restaurants
+- Cloud Kitchens
+- Food Delivery
+- Consumer
+- Logistics
+- India
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +32,44 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/rebel-foods-domain-security.yml
 - type: Website
+  url: https://www.rebelfoods.com/
+- type: Blog
+  url: https://www.rebelfoods.com/blogs
+- type: Support
+  url: https://www.rebelfoods.com/reach-out
+- type: PrivacyPolicy
+  url: https://www.rebelfoods.com/privacy-policy
+- type: TermsOfService
+  url: https://www.rebelfoods.com/policy
+- type: SecondaryMarketListing
   url: https://www.hiive.com/securities/rebel-foods-stock
+- type: LLMsTxt
+  url: llms/rebel-foods-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: Rebel Foods builds and runs its own Rebel Operating System for cloud-kitchen workflow and offers
+    it to restaurant chains only through the Rebel Launcher partnership — there is no developer portal,
+    no API reference and no api./developer./docs. subdomain that even resolves, and every /openapi.json,
+    /swagger.json and /.well-known/ path on both www.rebelfoods.com and the EatSure consumer host returns
+    404.
+  evidence:
+  - url: https://www.rebelfoods.com/openapi.json
+    status: 404
+  - url: https://www.rebelfoods.com/.well-known/api-catalog
+    status: 404
+  - url: https://www.eatsure.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.rebelfoods.com/
+    status: <no dns>
+  - url: https://developer.rebelfoods.com/
+    status: <no dns>
+  checked: '2026-08-26'

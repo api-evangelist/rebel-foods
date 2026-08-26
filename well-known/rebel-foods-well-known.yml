@@ -1,0 +1,55 @@
+generated: '2026-08-26'
+method: probed
+source: live GET of /.well-known/* on every Rebel Foods host in apis.yml plus the EatSure consumer platform host
+note: >-
+  Every probed path returned 404 on both hosts. No /.well-known/ document is served by Rebel Foods
+  anywhere we could reach, so NO WellKnown or SecurityTxt pointer is wired into apis.yml — this file
+  records a measured absence, not a published surface. Candidate API subdomains (api.rebelfoods.com,
+  developer.rebelfoods.com, docs.rebelfoods.com, api.eatsure.com) do not resolve at all, so they carry
+  no rows here.
+hosts:
+- host: www.rebelfoods.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.eatsure.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+unresolved_hosts:
+- host: api.rebelfoods.com
+  status: '<no dns>'
+- host: developer.rebelfoods.com
+  status: '<no dns>'
+- host: docs.rebelfoods.com
+  status: '<no dns>'
+- host: api.eatsure.com
+  status: '<no dns>'

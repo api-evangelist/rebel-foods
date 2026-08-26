@@ -1,0 +1,33 @@
+generated: '2026-08-26'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.rebelfoods.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  3 23:59:59 2026 GMT
+  hsts: false
+- host: www.eatsure.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 10 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 15552000
+domains:
+- domain: rebelfoods.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: eatsure.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+note: www.eatsure.com is the consumer ordering platform Rebel Foods operates for its own brands; it was
+  probed with the same live DNS/TLS/HTTP checks and added by hand because apis.yml carries no apis[] entry
+  for it. Neither registrable domain publishes DNSSEC or CAA. rebelfoods.com serves no HSTS header; eatsure.com
+  does (max-age 15552000, includeSubDomains). eatsure.com DMARC is p=none with aggregate/forensic reports
+  routed to consumer gmail.com mailboxes.
