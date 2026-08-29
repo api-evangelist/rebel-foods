@@ -10,6 +10,9 @@ description: 'Rebel Foods is an Indian cloud-kitchen operator, headquartered in 
   partnership, not a self-serve developer product: as of this profile Rebel Foods publishes no developer
   portal, no public API documentation, and no machine-readable API contract.'
 url: https://raw.githubusercontent.com/api-evangelist/rebel-foods/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "That platform is a commercial partnership, not a self-serve developer product: as of this profile Rebel Foods publishes no developer portal, no public API documentation, and no machine-readable API co"
 deliveryModel:
   model: saas
   open_source: false
